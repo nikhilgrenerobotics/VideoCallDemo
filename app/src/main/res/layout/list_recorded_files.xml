@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="?android:attr/listPreferredItemHeightLarge"
+    android:background="@drawable/border">
+
+    <TextView
+        android:id="@+id/fileNameTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:textSize="18sp"
+        android:layout_margin="5dp"/>
+
+    <TextView
+        android:id="@+id/filePathTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fileNameTextView"
+        android:gravity="center_vertical"
+        android:textSize="18sp"
+        android:layout_margin="5dp"/>
+
+</RelativeLayout>
