@@ -210,7 +210,7 @@ public class VideoCallActivity extends AppCompatActivity implements TelebuJoinLi
     public void joinedSuccessfully(List<RemoteStream> remoteStreams, HashMap<String, TelebuParticipant> participants) {
         for (RemoteStream remoteStream : remoteStreams) {
             Log.e("joinedSuccessfully", "$$$:" + remoteStream.id());
-            if (!remoteStream.id().contains("common")) {
+            if (!remoteStream.id().contains("common")&&!remoteStream.id().contains("avd")) {
                 JoinSubscribeOptions joinSubscribeOptions = new JoinSubscribeOptions();
                 ArrayList<String> videoCodec = new ArrayList<>();
                 videoCodec.add("H264");
@@ -394,7 +394,7 @@ public class VideoCallActivity extends AppCompatActivity implements TelebuJoinLi
         if (mLocalStream != null) mLocalStream.detach(smallRenderer);
         smallRenderer.release();
         for (RemoteStream remoteStream : telebuJoin.getRemoteStreams()) {
-            if (!remoteStream.id().contains("common")) {
+            if (!remoteStream.id().contains("common")&&!remoteStream.id().contains("avd")) {
                 remoteStream.detach(container.findViewWithTag(remoteStream.id()));
                 if((container.findViewWithTag(remoteStream.id()))!=null)
                 ((SurfaceViewRenderer) container.findViewWithTag(remoteStream.id())).release();
