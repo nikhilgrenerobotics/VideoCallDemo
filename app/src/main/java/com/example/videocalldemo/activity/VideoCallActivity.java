@@ -142,19 +142,19 @@ public class VideoCallActivity extends AppCompatActivity implements TelebuJoinLi
 
     @Override
     public void onStreamAdded(RemoteStream remoteStream) {
-        Log.e(TAG,"onStreamAdded::"+remoteStream.id()+","+selfStreamId);
+       /* Log.e(TAG,"onStreamAdded::"+remoteStream.id()+","+selfStreamId);
         if(selfStreamId==null||!selfStreamId.equals(remoteStream.id())){
             JoinSubscribeOptions joinSubscribeOptions = new JoinSubscribeOptions();
             ArrayList<String> videoCodec = new ArrayList<>();
             videoCodec.add("H264");
             joinSubscribeOptions.setVideoCodec(videoCodec);
-            /** Setting frame rate*/
+            *//** Setting frame rate*//*
             List<Integer> supportedFrameRates =telebuJoin.getSupportedFrameRates(remoteStream);
             if(supportedFrameRates.size()>0){
                 joinSubscribeOptions.setFps(supportedFrameRates.get(supportedFrameRates.size()-1));
             }
 
-            /** Setting resolution*/
+            *//** Setting resolution*//*
             List<Resolution> supportedResolutions =telebuJoin.getSupportedResolutions(remoteStream);
             if(supportedResolutions.size()>0){
                 joinSubscribeOptions.setResolution(supportedResolutions.get(0));
@@ -178,7 +178,7 @@ public class VideoCallActivity extends AppCompatActivity implements TelebuJoinLi
                 }
             });
         }
-
+*/
     }
 
     @Override
@@ -208,7 +208,7 @@ public class VideoCallActivity extends AppCompatActivity implements TelebuJoinLi
 
     @Override
     public void joinedSuccessfully(List<RemoteStream> remoteStreams, HashMap<String, TelebuParticipant> participants) {
-        for (RemoteStream remoteStream : remoteStreams) {
+       /* for (RemoteStream remoteStream : remoteStreams) {
             Log.e("joinedSuccessfully", "$$$:" + remoteStream.id());
             if (!remoteStream.id().contains("common")&&!remoteStream.id().contains("avd")) {
                 JoinSubscribeOptions joinSubscribeOptions = new JoinSubscribeOptions();
@@ -236,7 +236,7 @@ public class VideoCallActivity extends AppCompatActivity implements TelebuJoinLi
         }
 
         //telebuJoin.startRecording();
-        requestPermission();
+        requestPermission();*/
     }
 
     @Override
